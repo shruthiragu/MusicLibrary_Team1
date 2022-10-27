@@ -9,6 +9,41 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Name="MusicLibraryTitle" TextAlignment="Center" 
+                   Text="Music Library" FontSize="24" />
+        <ComboBox Width="215" Margin="183,43,0,0" Name="ArtistComboBox" Grid.Row="1" 
+                  SelectionChanged="ComboBox_SelectionChanged"
+                  HorizontalContentAlignment="Center">
+            <ComboBoxItem Content="Artist1"></ComboBoxItem>
+            <ComboBoxItem Content="Artist2"></ComboBoxItem>
+            <ComboBoxItem Content="Artist3"></ComboBoxItem>
+            <ComboBoxItem Content="Artist4"></ComboBoxItem>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="99,43,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Artist" VerticalAlignment="Top"/>
+        <ComboBox Width="215" Margin="183,90,0,0" x:Name="ArtistComboBox_Copy" Grid.Row="1" 
+            SelectionChanged="ComboBox_SelectionChanged"
+            HorizontalContentAlignment="Center">
+            <ComboBoxItem Content="Playlist1"/>
+            <ComboBoxItem Content="Playlist2"/>
+            <ComboBoxItem Content="Playlist3"/>
+            <ComboBoxItem Content="Playlist4"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="99,90,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Playlist" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
 
+        <TextBox HorizontalAlignment="Left" Margin="99,142,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Recommended" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
+        <RadioButton Content="Yes" Margin="231,142,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <RadioButton Content="No" Margin="346,142,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+        <TextBox HorizontalAlignment="Left" Height="43" Margin="99,188,0,0" TextWrapping="Wrap"   
+                 Text="TextBox" VerticalAlignment="Top" Width="436" Name="FileNameTextBox" Grid.Row="1"/>
+        <Button x:Name="BrowseButton" Content="Browse a file"   
+                Margin="569,191,0,0" VerticalAlignment="Top" Width="121" Click="BrowseButton_Click"   
+                RenderTransformOrigin="1.047,0.821" Height="40" Grid.Row="1"/>
+        <Button Content="Insert" Margin="101,245,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Content="Music Player" Margin="173,245,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Page>
