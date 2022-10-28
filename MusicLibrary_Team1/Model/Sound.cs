@@ -15,16 +15,17 @@ namespace MusicLibrary_Team1.Model
     }
 
 
-    internal class Sound
+    internal class Playlist
     {
         public string TrackName { get; set; }
-        public string AudioFile { get; set; }
-        public string ImageFile { get; set; }
+        public string Artist { get; set; }
+        Boolean Recommendable   { get; set; }
         public PlaylistCategory Category { get; set; }
     
-        public Sound(string name, PlaylistCategory category)
+        public Playlist(string name, PlaylistCategory category)
         {
-
+            name = name;
+            Category = category;
         }
 
         }
