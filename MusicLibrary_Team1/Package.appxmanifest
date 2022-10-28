@@ -4,7 +4,8 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  IgnorableNamespaces="uap mp">
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap mp rescap">
 
   <Identity
     Name="c8e84518-3efd-48cc-9d7e-68ff8d02b426"
@@ -45,5 +46,6 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
+    <rescap:Capability Name="broadFileSystemAccess" /> 
   </Capabilities>
 </Package>

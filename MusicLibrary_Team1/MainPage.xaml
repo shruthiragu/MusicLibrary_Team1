@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+ 
 
     <Grid>
         <Grid.RowDefinitions>
@@ -24,8 +25,8 @@
             <ComboBoxItem Content="Artist4"></ComboBoxItem>
         </ComboBox>
         <TextBox HorizontalAlignment="Left" Margin="99,43,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Artist" VerticalAlignment="Top"/>
-        <ComboBox Width="215" Margin="183,90,0,0" x:Name="ArtistComboBox_Copy" Grid.Row="1" 
-            SelectionChanged="ComboBox_SelectionChanged"
+        <ComboBox Width="215" Margin="183,90,0,0" x:Name="PlaylistComboBox" Grid.Row="1" 
+            SelectionChanged="PlaylistComboBox_SelectionChanged"
             HorizontalContentAlignment="Center">
             <ComboBoxItem Content="Playlist1"/>
             <ComboBoxItem Content="Playlist2"/>
@@ -43,7 +44,8 @@
         <Button x:Name="BrowseButton" Content="Browse a file"   
                 Margin="569,191,0,0" VerticalAlignment="Top" Width="121" Click="BrowseButton_Click"   
                 RenderTransformOrigin="1.047,0.821" Height="40" Grid.Row="1"/>
-        <Button Content="Insert" Margin="101,245,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Name ="InsertFileButton" Content="Insert" Margin="101,245,0,0" Grid.Row="1" VerticalAlignment="Top"
+                Click="InsertFileButton_Click"/>
         <Button Content="Music Player" Margin="173,245,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Page>

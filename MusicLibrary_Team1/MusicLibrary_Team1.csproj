@@ -160,6 +160,12 @@
       <Version>6.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Playlist1\" />
+    <Folder Include="Assets\Playlist2\" />
+    <Folder Include="Assets\Playlist3\" />
+    <Folder Include="Assets\Playlist4\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
