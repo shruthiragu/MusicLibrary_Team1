@@ -23,19 +23,11 @@ namespace MusicLibrary_Team1
     {
         private Windows.Storage.StorageFile file;
         private String selectedPlaylist;
+        private String selectedArtist;
+        private Boolean isRecommended;
         public MainPage()
         {
             this.InitializeComponent();
-        }
-
-        private void CategoryTextBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -62,12 +54,17 @@ namespace MusicLibrary_Team1
 
         private async void InsertFileButton_Click(object sender, RoutedEventArgs e)
         {
+            if (RecommendedTrue.IsChecked == true)
+                isRecommended = true;
+            else
+                isRecommended = false;
             // Get the path to the app's Assets folder.
             string root = Directory.GetCurrentDirectory();
-            string path = root + @"\Assets\" + this.selectedPlaylist;
+            //string path = root + @"\Assets\" + this.selectedPlaylist;
+            
 
             // Get the folder object that corresponds to this absolute path in the file system.
-            StorageFolder assetsFolder = await StorageFolder.GetFolderFromPathAsync(path);
+            StorageFolder assetsFolder = await StorageFolder.GetFolderFromPathAsync(root);
 
 
             StorageFile copiedFile = await file.CopyAsync(assetsFolder);
@@ -79,6 +76,12 @@ namespace MusicLibrary_Team1
             ComboBoxItem cbi = (ComboBoxItem)PlaylistComboBox.SelectedItem;
             selectedPlaylist = cbi.Content.ToString();
            
+        }
+
+        private void ArtistComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem cbi = (ComboBoxItem)ArtistComboBox.SelectedItem;
+            selectedArtist = cbi.Content.ToString();
         }
     }
 }
