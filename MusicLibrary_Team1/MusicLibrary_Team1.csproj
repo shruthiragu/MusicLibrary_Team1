@@ -133,6 +133,14 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\Adele.png" />
+    <Content Include="Assets\Images\Ariana_Grande.png" />
+    <Content Include="Assets\Images\Babycoverart.jpg" />
+    <Content Include="Assets\Images\Bruno Mars.png" />
+    <Content Include="Assets\Images\Ed Sheeran.png" />
+    <Content Include="Assets\Images\PartyRock.png" />
+    <Content Include="Assets\Images\Rihanna.png" />
+    <Content Include="Assets\Images\Say_So_-_Doja_Cat.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

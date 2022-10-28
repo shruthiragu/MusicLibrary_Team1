@@ -40,7 +40,7 @@ namespace MusicLibrary_Team1
             // Create OpenFileDialog
             var picker = new FileOpenPicker();
             picker.ViewMode = PickerViewMode.Thumbnail;
-            picker.SuggestedStartLocation = PickerLocationId.MusicLibrary;
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
             picker.FileTypeFilter.Add(".mp3");
             file = await picker.PickSingleFileAsync();
             if (file != null)
@@ -59,15 +59,17 @@ namespace MusicLibrary_Team1
             else
                 isRecommended = false;
             // Get the path to the app's Assets folder.
-            string root = Directory.GetCurrentDirectory();
+            //string root = Directory.GetCurrentDirectory();
             //string path = root + @"\Assets\" + this.selectedPlaylist;
+
+            
             
 
             // Get the folder object that corresponds to this absolute path in the file system.
-            StorageFolder assetsFolder = await StorageFolder.GetFolderFromPathAsync(root);
+            //StorageFolder assetsFolder = await StorageFolder.GetFolderFromPathAsync(root);
 
-
-            StorageFile copiedFile = await file.CopyAsync(assetsFolder);
+            
+            StorageFile copiedFile = await file.CopyAsync(KnownFolders.MusicLibrary);
 
         }
 
