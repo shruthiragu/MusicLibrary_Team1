@@ -119,6 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Sound.cs" />
     <Compile Include="MusicExplorer.xaml.cs">
       <DependentUpon>MusicExplorer.xaml</DependentUpon>
     </Compile>
