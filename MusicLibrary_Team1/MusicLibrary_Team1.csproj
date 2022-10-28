@@ -126,6 +126,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\sound.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +135,18 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Audio\All Songs\Adele - Someone Like You %28Official Music Video%29.mp3" />
+    <Content Include="Assets\Audio\All Songs\Ariana Grande - no tears left to cry %28Official Video%29.mp3" />
+    <Content Include="Assets\Audio\All Songs\Doja Cat - Say So %28Official Video%29.mp3" />
+    <Content Include="Assets\Audio\All Songs\Ed Sheeran - Thinking Out Loud %28Official Music Video%29.mp3" />
+    <Content Include="Assets\Audio\All Songs\Justin Bieber - Baby %28Official Music Video%29 ft. Ludacris.mp3" />
+    <Content Include="Assets\Audio\All Songs\LMFAO ft. Lauren Bennett, GoonRock - Party Rock Anthem %28Official Audio%29.mp3" />
+    <Content Include="Assets\Audio\All Songs\Mark Ronson - Uptown Funk %28Official Video%29 ft. Bruno Mars.mp3" />
+    <Content Include="Assets\Audio\All Songs\Rihanna - Umbrella %28Orange Version%29 %28Official Music Video%29 ft. JAY-Z.mp3" />
+    <Content Include="Assets\Images\chill art.png" />
+    <Content Include="Assets\Images\classics art.png" />
+    <Content Include="Assets\Images\dance art.png" />
+    <Content Include="Assets\Images\upbeat art.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -173,6 +186,11 @@
     <Folder Include="Assets\Playlist2\" />
     <Folder Include="Assets\Playlist3\" />
     <Folder Include="Assets\Playlist4\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Audio\Albums\" />
+    <Folder Include="Assets\Audio\Artists\" />
+    <Folder Include="Assets\Audio\Genre\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
