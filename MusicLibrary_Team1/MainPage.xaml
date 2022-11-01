@@ -5,12 +5,61 @@
     xmlns:local="using:MusicLibrary_Team1"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:MusicLibrary_Team1.Model"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
  
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Name="MusicLibraryTitle" TextAlignment="Center" Text="Music Library" FontSize="50" FontFamily="Lucida Handwriting" Foreground="DarkBlue"/>
+        <RelativePanel Grid.Row="0">
+            <Button x:Name="HomeButton" Height="80" Width="80" Click="HomeButton_Click">
+                <Image Source="Assets/Icons/homeIcon.png"/>
+            </Button>
+            <Button x:Name="BackButton" Height="80" Width="80" Click="BackButton_Click" RelativePanel.RightOf="HomeButton">
+                <Image Source="Assets/Icons/backIcon.png"/>
+            </Button>
+        </RelativePanel>
+        <SplitView Grid.Row="1" Name="ContentSplitView"
+                   DisplayMode="CompactOverlay"
+                   CompactPaneLength="80"
+                   OpenPaneLength="200">
+            <SplitView.Pane>
+                <ListView>
+                    
+                </ListView>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Name="PlayListTextBlock"  Foreground="Red" FontSize="40" FontFamily="Lucia Handwriting" Text="All Songs" HorizontalAlignment="Left"></TextBlock>
+                    <GridView x:Name="TracksGridView" Grid.Row="1" ItemsSource="{x:Bind tracks}" IsItemClickEnabled="True" ItemClick="TracksGridView_ItemClick">
+                        <GridView.ItemTemplate>                         
+                            <DataTemplate x:DataType="data:Track">
+                                <Image Height="200" Width="200" Source="{x:Bind ImageFile}"></Image>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                    <MediaElement Name="TrackMedia" AutoPlay="True"></MediaElement>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+                     
+
+
+
+
+
+    </Grid>
+</Page>
+<!--<Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -46,6 +95,5 @@
                 RenderTransformOrigin="1.047,0.821" Height="40" Grid.Row="1"/>
         <Button Name ="InsertFileButton" Content="Insert" Margin="101,245,0,0" Grid.Row="1" VerticalAlignment="Top"
                 Click="InsertFileButton_Click"/>
-        <Button Content="Music Player" Margin="173,245,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-    </Grid>
-</Page>
+        <Button Content="Music Player" Margin="173,245,0,0" Grid.Row="1" VerticalAlignment="Top"/>-->
+

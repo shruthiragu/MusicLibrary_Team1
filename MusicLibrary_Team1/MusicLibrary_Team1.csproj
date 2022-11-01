@@ -119,14 +119,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Sound.cs" />
+    <Compile Include="Model\Track.cs" />
+    <Compile Include="Model\TrackManager.cs" />
     <Compile Include="MusicExplorer.xaml.cs">
       <DependentUpon>MusicExplorer.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\sound.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -135,26 +135,32 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Images\Adele.png" />
-    <Content Include="Assets\Images\Ariana_Grande.png" />
-    <Content Include="Assets\Images\Babycoverart.jpg" />
-    <Content Include="Assets\Images\Bruno Mars.png" />
-    <Content Include="Assets\Images\Ed Sheeran.png" />
-    <Content Include="Assets\Images\PartyRock.png" />
-    <Content Include="Assets\Images\Rihanna.png" />
-    <Content Include="Assets\Images\Say_So_-_Doja_Cat.png" />
-    <Content Include="Assets\Audio\All Songs\Adele - Someone Like You %28Official Music Video%29.mp3" />
-    <Content Include="Assets\Audio\All Songs\Ariana Grande - no tears left to cry %28Official Video%29.mp3" />
-    <Content Include="Assets\Audio\All Songs\Doja Cat - Say So %28Official Video%29.mp3" />
-    <Content Include="Assets\Audio\All Songs\Ed Sheeran - Thinking Out Loud %28Official Music Video%29.mp3" />
-    <Content Include="Assets\Audio\All Songs\Justin Bieber - Baby %28Official Music Video%29 ft. Ludacris.mp3" />
-    <Content Include="Assets\Audio\All Songs\LMFAO ft. Lauren Bennett, GoonRock - Party Rock Anthem %28Official Audio%29.mp3" />
-    <Content Include="Assets\Audio\All Songs\Mark Ronson - Uptown Funk %28Official Video%29 ft. Bruno Mars.mp3" />
-    <Content Include="Assets\Audio\All Songs\Rihanna - Umbrella %28Orange Version%29 %28Official Music Video%29 ft. JAY-Z.mp3" />
+    <Content Include="Assets\Audio\Chill\NoTearsLeftToCry.mp3" />
+    <Content Include="Assets\Audio\Chill\SomeoneLikeYou.mp3" />
+    <Content Include="Assets\Audio\Classics\SaySo.mp3" />
+    <Content Include="Assets\Audio\Classics\ThinkingOutLoud.mp3" />
+    <Content Include="Assets\Audio\Dance\Baby.mp3" />
+    <Content Include="Assets\Audio\Dance\PartyRockAnthem.mp3" />
+    <Content Include="Assets\Audio\Upbeat\Umbrella.mp3" />
+    <Content Include="Assets\Audio\Upbeat\UptownFunk.mp3" />
+    <Content Include="Assets\Icons\animalIcon.png" />
+    <Content Include="Assets\Icons\backIcon.png" />
+    <Content Include="Assets\Icons\birdIcon.png" />
+    <Content Include="Assets\Icons\farmIcon.png" />
+    <Content Include="Assets\Icons\forestIcon.png" />
+    <Content Include="Assets\Icons\homeIcon.png" />
     <Content Include="Assets\Images\chill art.png" />
+    <Content Include="Assets\Images\Chill\NoTearsLeftToCry.png" />
+    <Content Include="Assets\Images\Chill\SomeoneLikeYou.png" />
     <Content Include="Assets\Images\classics art.png" />
+    <Content Include="Assets\Images\Classics\SaySo.png" />
+    <Content Include="Assets\Images\Classics\ThinkingOutLoud.png" />
     <Content Include="Assets\Images\dance art.png" />
+    <Content Include="Assets\Images\Dance\Baby.png" />
+    <Content Include="Assets\Images\Dance\PartyRockAnthem.png" />
     <Content Include="Assets\Images\upbeat art.png" />
+    <Content Include="Assets\Images\Upbeat\Umbrella.png" />
+    <Content Include="Assets\Images\Upbeat\UptownFunk.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -189,17 +195,8 @@
       <Version>6.0.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Playlist1\" />
-    <Folder Include="Assets\Playlist2\" />
-    <Folder Include="Assets\Playlist3\" />
-    <Folder Include="Assets\Playlist4\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Audio\Albums\" />
-    <Folder Include="Assets\Audio\Artists\" />
-    <Folder Include="Assets\Audio\Genre\" />
-  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

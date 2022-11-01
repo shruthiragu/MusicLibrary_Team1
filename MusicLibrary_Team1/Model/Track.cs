@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicLibrary_Team1.Model
 { 
-    internal enum PlaylistCategory
+    public enum PlaylistCategory
 {
         Chill,
         Classics,
@@ -15,17 +15,21 @@ namespace MusicLibrary_Team1.Model
     }
 
 
-    internal class Playlist
+    public class Track
     {
         public string TrackName { get; set; }
         public string Artist { get; set; }
-        Boolean Recommendable   { get; set; }
+        public Boolean Recommendable   { get; set; }
         public PlaylistCategory Category { get; set; }
+        public string ImageFile { get; set; }
+        public string AudioFile { get;set; }
     
-        public Playlist(string name, PlaylistCategory category)
+        public Track(string name, PlaylistCategory category)
         {
-            name = name;
+            TrackName = name;
             Category = category;
+            ImageFile = $"Assets/Images/{category}/{name}.png";
+            AudioFile = $"Assets/Audio/{category}/{name}.mp3";
         }
 
         }
