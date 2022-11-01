@@ -129,6 +129,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\sound.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,17 +153,13 @@
     <Content Include="Assets\Icons\homeIcon.png" />
     <Content Include="Assets\Icons\Upbeat\upbeatIcon.png" />
     <Content Include="Assets\Images\chill art.png" />
-    <Content Include="Assets\Images\Chill\NoTearsLeftToCry.png" />
-    <Content Include="Assets\Images\Chill\SomeoneLikeYou.png" />
     <Content Include="Assets\Images\classics art.png" />
-    <Content Include="Assets\Images\Classics\SaySo.png" />
-    <Content Include="Assets\Images\Classics\ThinkingOutLoud.png" />
     <Content Include="Assets\Images\dance art.png" />
-    <Content Include="Assets\Images\Dance\Baby.png" />
-    <Content Include="Assets\Images\Dance\PartyRockAnthem.png" />
+    <Content Include="Assets\Images\Ed Sheeran.png" />
+    <Content Include="Assets\Images\PartyRock.png" />
+    <Content Include="Assets\Images\Rihanna.png" />
+    <Content Include="Assets\Images\Say_So_-_Doja_Cat.png" />
     <Content Include="Assets\Images\upbeat art.png" />
-    <Content Include="Assets\Images\Upbeat\Umbrella.png" />
-    <Content Include="Assets\Images\Upbeat\UptownFunk.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -197,7 +194,12 @@
       <Version>6.0.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assets\Playlist1\" />
+    <Folder Include="Assets\Playlist2\" />
+    <Folder Include="Assets\Playlist3\" />
+    <Folder Include="Assets\Playlist4\" />
+  </ItemGroup>
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
