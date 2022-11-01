@@ -16,7 +16,7 @@ namespace MusicLibrary_Team1.Model
             allTracks.ForEach(track => tracks.Add(track));
         }
 
-        public static void GetAllTracksbyPlayList(ObservableCollection<Track> tracks, PlaylistCategory category)
+        public static void GetAllTracksbyPlayList(ObservableCollection<Track> tracks, PlayListCategory category)
         {
             var allTracks = getTracks();
             tracks.Clear();
@@ -28,14 +28,14 @@ namespace MusicLibrary_Team1.Model
         {
             List<Track> tracks = new List<Track>
             {
-                new Track("SomeoneLikeYou", PlaylistCategory.Chill),
-                new Track("NoTearsLeftToCry", PlaylistCategory.Chill),
-                new Track("SaySo", PlaylistCategory.Classics),
-                new Track("ThinkingOutLoud", PlaylistCategory.Classics),
-                new Track("Baby", PlaylistCategory.Dance),
-                new Track("PartyRockAnthem", PlaylistCategory.Dance),
-                new Track("UptownFunk", PlaylistCategory.Upbeat),
-                new Track("Umbrella", PlaylistCategory.Upbeat)
+                new Track("SomeoneLikeYou", PlayListCategory.Chill),
+                new Track("NoTearsLeftToCry", PlayListCategory.Chill),
+                new Track("SaySo", PlayListCategory.Classics),
+                new Track("ThinkingOutLoud", PlayListCategory.Classics),
+                new Track("Baby", PlayListCategory.Dance),
+                new Track("PartyRockAnthem", PlayListCategory.Dance),
+                new Track("UptownFunk", PlayListCategory.Upbeat),
+                new Track("Umbrella", PlayListCategory.Upbeat)
             };
             return tracks;
                     }

@@ -119,6 +119,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\PlayListMenuItem.cs" />
+    <Compile Include="Model\PlayListManager.cs" />
     <Compile Include="Model\Track.cs" />
     <Compile Include="Model\TrackManager.cs" />
     <Compile Include="MusicExplorer.xaml.cs">
@@ -143,12 +145,12 @@
     <Content Include="Assets\Audio\Dance\PartyRockAnthem.mp3" />
     <Content Include="Assets\Audio\Upbeat\Umbrella.mp3" />
     <Content Include="Assets\Audio\Upbeat\UptownFunk.mp3" />
-    <Content Include="Assets\Icons\animalIcon.png" />
     <Content Include="Assets\Icons\backIcon.png" />
-    <Content Include="Assets\Icons\birdIcon.png" />
-    <Content Include="Assets\Icons\farmIcon.png" />
-    <Content Include="Assets\Icons\forestIcon.png" />
+    <Content Include="Assets\Icons\Chill\chillIcon.png" />
+    <Content Include="Assets\Icons\Classics\classicsIcon.png" />
+    <Content Include="Assets\Icons\Dance\danceIcon.png" />
     <Content Include="Assets\Icons\homeIcon.png" />
+    <Content Include="Assets\Icons\Upbeat\upbeatIcon.png" />
     <Content Include="Assets\Images\chill art.png" />
     <Content Include="Assets\Images\Chill\NoTearsLeftToCry.png" />
     <Content Include="Assets\Images\Chill\SomeoneLikeYou.png" />
