@@ -26,5 +26,20 @@ namespace MusicLibrary_Team1
         {
             this.InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ShowAllSongsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ApplyButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -9,6 +9,8 @@ using System.IO;
 using Windows.ApplicationModel;
 using Windows.Storage.AccessCache;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using MusicLibrary_Team1.Model;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -21,16 +23,37 @@ namespace MusicLibrary_Team1
     
     public sealed partial class MainPage : Page
     {
-        private Windows.Storage.StorageFile file;
+        /*private Windows.Storage.StorageFile file;
         private String selectedPlaylist;
         private String selectedArtist;
-        private Boolean isRecommended;
+        private Boolean isRecommended;*/
+
+        internal ObservableCollection<Track> tracks;
         public MainPage()
         {
             this.InitializeComponent();
+            this.tracks = new ObservableCollection<Track>();
+            TrackManager.GetAllTracks(tracks);
+            //BackButton.Visibility = Visibility.Collapsed;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TracksGridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var track = (Track)e.ClickedItem;
+            TrackMedia.Source = new Uri(this.BaseUri, track.AudioFile);
+        }
+
+        /*private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
              
         }
@@ -40,7 +63,7 @@ namespace MusicLibrary_Team1
             // Create OpenFileDialog
             var picker = new FileOpenPicker();
             picker.ViewMode = PickerViewMode.Thumbnail;
-            picker.SuggestedStartLocation = PickerLocationId.MusicLibrary;
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
             picker.FileTypeFilter.Add(".mp3");
             file = await picker.PickSingleFileAsync();
             if (file != null)
@@ -59,15 +82,17 @@ namespace MusicLibrary_Team1
             else
                 isRecommended = false;
             // Get the path to the app's Assets folder.
-            string root = Directory.GetCurrentDirectory();
+            //string root = Directory.GetCurrentDirectory();
             //string path = root + @"\Assets\" + this.selectedPlaylist;
+
+            
             
 
             // Get the folder object that corresponds to this absolute path in the file system.
-            StorageFolder assetsFolder = await StorageFolder.GetFolderFromPathAsync(root);
+            //StorageFolder assetsFolder = await StorageFolder.GetFolderFromPathAsync(root);
 
-
-            StorageFile copiedFile = await file.CopyAsync(assetsFolder);
+            
+            StorageFile copiedFile = await file.CopyAsync(KnownFolders.MusicLibrary);
 
         }
 
@@ -82,6 +107,6 @@ namespace MusicLibrary_Team1
         {
             ComboBoxItem cbi = (ComboBoxItem)ArtistComboBox.SelectedItem;
             selectedArtist = cbi.Content.ToString();
-        }
+        }*/
     }
 }

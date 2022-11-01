@@ -6,9 +6,49 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+   
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    
     <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Background="Coral" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <TextBlock Text="Music Explorer"></TextBlock>
+        </StackPanel>
+
+        <!--
+        <TextBlock Name="MusicExplorerTitle" TextAlignment="Center" 
+                   Text="Music Explorer" FontSize="24" />-->
+
+        <ComboBox Name="ArtistFilter" Grid.Row="1" Grid.Column="0" Text="Artist" Width="250" Margin="211,26,0,0">
+            <ComboBoxItem Content="Artist1"></ComboBoxItem>
+            <ComboBoxItem Content="Artist2"></ComboBoxItem>
+            <ComboBoxItem Content="Artist3"></ComboBoxItem>
+            <ComboBoxItem Content="Artist4"></ComboBoxItem>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="26,26,0,0" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="Choose Artist" VerticalAlignment="Top"/>
+        <ComboBox x:Name="PlaylistFilter" Grid.Row="1" Grid.Column="0" Text="Artist" Width="250" Margin="211,93,0,0">
+            <ComboBoxItem Content="Playlist1"/>
+            <ComboBoxItem Content="Playlist2"/>
+            <ComboBoxItem Content="Playlist3"/>
+            <ComboBoxItem Content="Playlist4"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="26,93,0,0" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="Choose Playlist" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
+        <ComboBox x:Name="RecommendedFilter" Grid.Row="1" Grid.Column="0" Text="Artist" Width="250" Margin="211,160,0,0">
+            <ComboBoxItem Content="Yes"/>
+            <ComboBoxItem Content="No"/>
+            
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Margin="26,160,0,0" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="Recommended" VerticalAlignment="Top"/>
+        <Button Name="ApplyButton" Content="Apply" Margin="26,227,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ApplyButton_Click"/>
+        <Button Name="ShowAllSongsButton" Content="Show All Songs" Margin="26,299,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ShowAllSongsButton_Click"/>
 
     </Grid>
 </Page>
