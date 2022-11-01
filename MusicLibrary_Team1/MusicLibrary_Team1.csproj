@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Sound.cs" />
+    <Compile Include="Model\soundmanager.cs" />
     <Compile Include="MusicExplorer.xaml.cs">
       <DependentUpon>MusicExplorer.xaml</DependentUpon>
     </Compile>
@@ -143,9 +144,17 @@
     <Content Include="Assets\Audio\All Songs\LMFAO ft. Lauren Bennett, GoonRock - Party Rock Anthem %28Official Audio%29.mp3" />
     <Content Include="Assets\Audio\All Songs\Mark Ronson - Uptown Funk %28Official Video%29 ft. Bruno Mars.mp3" />
     <Content Include="Assets\Audio\All Songs\Rihanna - Umbrella %28Orange Version%29 %28Official Music Video%29 ft. JAY-Z.mp3" />
+    <Content Include="Assets\Images\Adele.png" />
+    <Content Include="Assets\Images\Ariana_Grande.png" />
+    <Content Include="Assets\Images\Babycoverart.jpg" />
+    <Content Include="Assets\Images\Bruno Mars.png" />
     <Content Include="Assets\Images\chill art.png" />
     <Content Include="Assets\Images\classics art.png" />
     <Content Include="Assets\Images\dance art.png" />
+    <Content Include="Assets\Images\Ed Sheeran.png" />
+    <Content Include="Assets\Images\PartyRock.png" />
+    <Content Include="Assets\Images\Rihanna.png" />
+    <Content Include="Assets\Images\Say_So_-_Doja_Cat.png" />
     <Content Include="Assets\Images\upbeat art.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -187,11 +196,7 @@
     <Folder Include="Assets\Playlist3\" />
     <Folder Include="Assets\Playlist4\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Audio\Albums\" />
-    <Folder Include="Assets\Audio\Artists\" />
-    <Folder Include="Assets\Audio\Genre\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

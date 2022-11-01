@@ -26,6 +26,7 @@ namespace MusicLibrary_Team1.Model
         {
             name = name;
             Category = category;
+
         }
 
         }
