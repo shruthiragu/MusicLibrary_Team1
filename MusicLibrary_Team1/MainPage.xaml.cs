@@ -61,7 +61,7 @@ namespace MusicLibrary_Team1
             var track = (Track)e.ClickedItem;
             //TrackMedia.Source = new Uri(this.BaseUri, track.AudioFile);
             TrackPlayerElement.Visibility = Visibility.Visible;
-            TrackPlayerElement.Source = MediaSource.CreateFromUri(new Uri(this.BaseUri, track.AudioFile));            
+            TrackPlayerElement.Source = MediaSource.CreateFromUri(new Uri(this.BaseUri, track.AudioFile));
         }
 
         private void PlayListMenuItemListView_ItemClick(object sender, ItemClickEventArgs e)

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +15,7 @@ namespace MusicLibrary_Team1.Model
     }
 
 
-    internal class Playlist
+    public class Track
     {
         public string TrackName { get; set; }
         public string Artist { get; set; }
@@ -25,14 +25,11 @@ namespace MusicLibrary_Team1.Model
         public string AudioFile { get;set; }
     
         public Track(string name, PlayListCategory category)
-        Boolean Recommendable   { get; set; }
-        public PlaylistCategory Category { get; set; }
-    
-        public Playlist(string name, PlaylistCategory category)
         {
-            name = name;
+            TrackName = name;
             Category = category;
-
+            ImageFile = $"Assets/Images/{category}/{name}.png";
+            AudioFile = $"Assets/Audio/{category}/{name}.mp3";
         }
 
         }
