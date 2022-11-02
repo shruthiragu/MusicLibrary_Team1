@@ -9,11 +9,12 @@ namespace MusicLibrary_Team1.Model
 {
     internal static class TrackManager
     {
-        public static void GetAllTracks(ObservableCollection<Track> tracks)
+        public static List<Track> GetAllTracks(ObservableCollection<Track> tracks)
         {
             var allTracks = getTracks();
             tracks.Clear();
             allTracks.ForEach(track => tracks.Add(track));
+            return allTracks;
         }
 
         public static void GetAllTracksbyPlayList(ObservableCollection<Track> tracks, PlayListCategory category)
@@ -22,6 +23,14 @@ namespace MusicLibrary_Team1.Model
             tracks.Clear();
             var filteredTracks = allTracks.Where(track => track.Category == category).ToList();
             filteredTracks.ForEach(track => tracks.Add(track));
+        }
+
+        public static void GetTrackbySearchName(ObservableCollection<Track> tracks, string trackName)
+        {
+            var allTracks = getTracks();
+            tracks.Clear();
+            var searchTrack = allTracks.Where(track => track.TrackName == trackName).ToList();
+            searchTrack.ForEach(track => tracks.Add(track));
         }
 
         public static void GetAllRecommendedTracks(ObservableCollection<Track> tracks,List<Track> recommendedTracks)
@@ -44,6 +53,14 @@ namespace MusicLibrary_Team1.Model
                 new Track("Umbrella", PlayListCategory.Upbeat)
             };
             return tracks;
+        }
+
+        internal static List<string> GetAllTrackNames()
+        {
+            List<string> allTrackNames = new List<string>();
+            var allTracks = getTracks();
+            allTracks.ForEach(track => allTrackNames.Add(track.TrackName));
+            return allTrackNames;
         }
     }
 }

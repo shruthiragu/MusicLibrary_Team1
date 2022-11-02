@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using Windows.Media.Core;
 using Windows.Devices.Bluetooth;
 using Windows.UI.Xaml.Media;
+using System.Linq;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -35,15 +36,20 @@ namespace MusicLibrary_Team1
         internal ObservableCollection<Track> tracks;
         internal List<PlayListMenuItem> playListItems;
         public List<Track> recommendedTracks;
+        public List<Track> searchAllSongsList;
+        public List<string> allTrackNames;
+
         public MainPage()
         {
             this.InitializeComponent();
             this.tracks = new ObservableCollection<Track>();
-            TrackManager.GetAllTracks(tracks);
+            this.searchAllSongsList = TrackManager.GetAllTracks(tracks);
+            this.allTrackNames = TrackManager.GetAllTrackNames();
             this.playListItems = new List<PlayListMenuItem>();
             playListItems = PlayListManager.getPlayListIcons();
             BackButton.Visibility = Visibility.Collapsed;
             this.recommendedTracks = new List<Track>();
+            
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -82,14 +88,15 @@ namespace MusicLibrary_Team1
         {
             //Button favoriteButton = (sender as Button);           
             var favoriteTrack = (sender as Button).DataContext as Track;
-            if (!recommendedTracks.Contains(favoriteTrack))
+            if (recommendedTracks.Contains(favoriteTrack))
             {
-                recommendedTracks.Add(favoriteTrack);
+                recommendedTracks.Remove(favoriteTrack);
+                
                 //favoriteButton.Background = new SolidColorBrush(Windows.UI.Colors.Blue);
             }
             else
             {
-                recommendedTracks.Remove(favoriteTrack);
+                recommendedTracks.Add(favoriteTrack);
                 //favoriteButton.Background = new SolidColorBrush(Windows.UI.Colors.Gray);
             }
         }
@@ -100,6 +107,34 @@ namespace MusicLibrary_Team1
             PlayListTextBlock.Text = "Recommended";
             BackButton.Visibility = Visibility.Visible;
         }
+
+        private void SearchAllSongsAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                List<string> trackSuggestion = allTrackNames.Where(x => x.Contains(sender.Text)).ToList();
+                sender.ItemsSource = trackSuggestion;
+            }
+            
+        }        
+
+        private void SearchAllSongsAutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            var selectedItem = args.SelectedItem.ToString();
+            sender.Text = selectedItem;
+        }
+
+        private void SearchAllSongsAutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            if (args.ChosenSuggestion != null)
+            {
+                string chosenTrackName = args.ChosenSuggestion.ToString();
+                TrackManager.GetTrackbySearchName(tracks, chosenTrackName);
+                BackButton.Visibility = Visibility.Visible;
+                PlayListTextBlock.Text = "Search Results";                
+            }
+        }
+
 
         /*private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
