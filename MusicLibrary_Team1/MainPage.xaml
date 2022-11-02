@@ -20,8 +20,10 @@
             <Button x:Name="HomeButton" Height="80" Width="80" Click="HomeButton_Click">
                 <Image Source="Assets/Icons/homeIcon.png"/>
             </Button>
-            <Button x:Name="BackButton" Height="80" Width="80" Click="BackButton_Click" RelativePanel.RightOf="HomeButton">
+            <Button x:Name="BackButton" Height="80" Width="80" Click="BackButton_Click" RelativePanel.RightOf="FavoritesButton">
                 <Image Source="Assets/Icons/backIcon.png"/>
+            </Button>
+            <Button x:Name="FavoritesButton" Height="80" Width="80" Click="FavoritesButton_Click"  RelativePanel.RightOf="HomeButton" FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xE113;">
             </Button>
         </RelativePanel>
         <SplitView Grid.Row="1" Name="ContentSplitView"
@@ -59,6 +61,13 @@
                                 <StackPanel>
                                     <Image Height="200" Width="200" Source="{x:Bind ImageFile}"></Image>
                                     <TextBlock Text="{x:Bind TrackName}" FontSize="20"/>
+                                    <Button x:Name="RecommendedButton" AllowFocusOnInteraction="True"
+                                            FontFamily="Segoe MDL2 Assets" Content="&#xE113;"
+                                            Height="35" Width="35" Click="RecommendedButton_Click"
+                                            Background="Transparent"
+                                            >
+                                        <!--<Image Source="Assets/Icons/favoriteIcon.png"></Image>-->
+                                    </Button>
                                 </StackPanel>                                
                             </DataTemplate>
                         </GridView.ItemTemplate>

@@ -24,6 +24,12 @@ namespace MusicLibrary_Team1.Model
             filteredTracks.ForEach(track => tracks.Add(track));
         }
 
+        public static void GetAllRecommendedTracks(ObservableCollection<Track> tracks,List<Track> recommendedTracks)
+        {
+            tracks.Clear();
+            recommendedTracks.ForEach(track => tracks.Add(track));                
+        }
+
         private static List<Track> getTracks()
         {
             List<Track> tracks = new List<Track>
@@ -38,6 +44,6 @@ namespace MusicLibrary_Team1.Model
                 new Track("Umbrella", PlayListCategory.Upbeat)
             };
             return tracks;
-                    }
+        }
     }
 }

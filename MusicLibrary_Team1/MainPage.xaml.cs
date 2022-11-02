@@ -13,6 +13,8 @@ using System.Collections.ObjectModel;
 using MusicLibrary_Team1.Model;
 using System.Collections.Generic;
 using Windows.Media.Core;
+using Windows.Devices.Bluetooth;
+using Windows.UI.Xaml.Media;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -32,6 +34,7 @@ namespace MusicLibrary_Team1
 
         internal ObservableCollection<Track> tracks;
         internal List<PlayListMenuItem> playListItems;
+        public List<Track> recommendedTracks;
         public MainPage()
         {
             this.InitializeComponent();
@@ -39,12 +42,14 @@ namespace MusicLibrary_Team1
             TrackManager.GetAllTracks(tracks);
             this.playListItems = new List<PlayListMenuItem>();
             playListItems = PlayListManager.getPlayListIcons();
-            BackButton.Visibility = Visibility.Collapsed;           
+            BackButton.Visibility = Visibility.Collapsed;
+            this.recommendedTracks = new List<Track>();
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             ContentSplitView.IsPaneOpen = !ContentSplitView.IsPaneOpen;
+            
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -71,6 +76,29 @@ namespace MusicLibrary_Team1
             PlayListTextBlock.Text = clickedItem.Category.ToString();
             BackButton.Visibility = Visibility.Visible;
             ContentSplitView.IsPaneOpen = false;
+        }
+
+        private void RecommendedButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Button favoriteButton = (sender as Button);           
+            var favoriteTrack = (sender as Button).DataContext as Track;
+            if (!recommendedTracks.Contains(favoriteTrack))
+            {
+                recommendedTracks.Add(favoriteTrack);
+                //favoriteButton.Background = new SolidColorBrush(Windows.UI.Colors.Blue);
+            }
+            else
+            {
+                recommendedTracks.Remove(favoriteTrack);
+                //favoriteButton.Background = new SolidColorBrush(Windows.UI.Colors.Gray);
+            }
+        }
+
+        private void FavoritesButton_Click(object sender, RoutedEventArgs e)
+        {
+            TrackManager.GetAllRecommendedTracks(tracks, recommendedTracks);            
+            PlayListTextBlock.Text = "Recommended";
+            BackButton.Visibility = Visibility.Visible;
         }
 
         /*private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
