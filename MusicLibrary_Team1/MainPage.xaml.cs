@@ -28,16 +28,12 @@ namespace MusicLibrary_Team1
     
     public sealed partial class MainPage : Page
     {
-        /*private Windows.Storage.StorageFile file;
-        private String selectedPlaylist;
-        private String selectedArtist;
-        private Boolean isRecommended;*/
-
         internal ObservableCollection<Track> tracks;
         internal List<PlayListMenuItem> playListItems;
         public List<Track> recommendedTracks;
         public List<Track> searchAllSongsList;
         public List<string> allTrackNames;
+        public List<string> recommendedTrackNames;
 
         public MainPage()
         {
@@ -49,13 +45,13 @@ namespace MusicLibrary_Team1
             playListItems = PlayListManager.getPlayListIcons();
             BackButton.Visibility = Visibility.Collapsed;
             this.recommendedTracks = new List<Track>();
+            this.recommendedTrackNames = new List<string>();
             
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             ContentSplitView.IsPaneOpen = !ContentSplitView.IsPaneOpen;
-            
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -69,8 +65,7 @@ namespace MusicLibrary_Team1
 
         private void TracksGridView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var track = (Track)e.ClickedItem;
-            //TrackMedia.Source = new Uri(this.BaseUri, track.AudioFile);
+            var track = (Track)e.ClickedItem;            
             TrackPlayerElement.Visibility = Visibility.Visible;
             TrackPlayerElement.Source = MediaSource.CreateFromUri(new Uri(this.BaseUri, track.AudioFile));
         }
@@ -85,25 +80,22 @@ namespace MusicLibrary_Team1
         }
 
         private void RecommendedButton_Click(object sender, RoutedEventArgs e)
-        {
-            //Button favoriteButton = (sender as Button);           
+        {            
             var favoriteTrack = (sender as Button).DataContext as Track;
-            if (recommendedTracks.Contains(favoriteTrack))
+            if (!recommendedTrackNames.Contains(favoriteTrack.TrackName))
             {
-                recommendedTracks.Remove(favoriteTrack);
+                recommendedTrackNames.Add(favoriteTrack.TrackName);
                 
-                //favoriteButton.Background = new SolidColorBrush(Windows.UI.Colors.Blue);
             }
             else
             {
-                recommendedTracks.Add(favoriteTrack);
-                //favoriteButton.Background = new SolidColorBrush(Windows.UI.Colors.Gray);
+                recommendedTrackNames.Remove(favoriteTrack.TrackName);               
             }
         }
 
         private void FavoritesButton_Click(object sender, RoutedEventArgs e)
         {
-            TrackManager.GetAllRecommendedTracks(tracks, recommendedTracks);            
+            TrackManager.GetAllRecommendedTracks(tracks, recommendedTracks, recommendedTrackNames);
             PlayListTextBlock.Text = "Recommended";
             BackButton.Visibility = Visibility.Visible;
         }
@@ -133,63 +125,6 @@ namespace MusicLibrary_Team1
                 BackButton.Visibility = Visibility.Visible;
                 PlayListTextBlock.Text = "Search Results";                
             }
-        }
-
-
-        /*private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-             
-        }
-
-        private async void BrowseButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Create OpenFileDialog
-            var picker = new FileOpenPicker();
-            picker.ViewMode = PickerViewMode.Thumbnail;
-            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
-            picker.FileTypeFilter.Add(".mp3");
-            file = await picker.PickSingleFileAsync();
-            if (file != null)
-                this.FileNameTextBox.Text = file.Path;
-            else
-                this.FileNameTextBox.Text = "Operation Cancelled!";
-            
-        }
-
-   
-
-        private async void InsertFileButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (RecommendedTrue.IsChecked == true)
-                isRecommended = true;
-            else
-                isRecommended = false;
-            // Get the path to the app's Assets folder.
-            //string root = Directory.GetCurrentDirectory();
-            //string path = root + @"\Assets\" + this.selectedPlaylist;
-
-            
-            
-
-            // Get the folder object that corresponds to this absolute path in the file system.
-            //StorageFolder assetsFolder = await StorageFolder.GetFolderFromPathAsync(root);
-
-            
-            StorageFile copiedFile = await file.CopyAsync(KnownFolders.MusicLibrary);
-
-        }
-
-        private void PlaylistComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {           
-            ComboBoxItem cbi = (ComboBoxItem)PlaylistComboBox.SelectedItem;
-            selectedPlaylist = cbi.Content.ToString();
-           
-        }
-
-        private void ArtistComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxItem cbi = (ComboBoxItem)ArtistComboBox.SelectedItem;
-            selectedArtist = cbi.Content.ToString();
-        }*/
+        }       
     }
 }

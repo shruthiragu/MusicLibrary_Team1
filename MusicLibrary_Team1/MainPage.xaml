@@ -17,13 +17,12 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Name="MusicLibraryTitle" TextAlignment="Center" Text="Music Library" FontSize="50" FontFamily="Arial"  Foreground="DarkBlue" FontWeight="Bold"/>
         <RelativePanel Grid.Row="0">
-            <Button x:Name="HomeButton" Height="80" Width="80" Click="HomeButton_Click" FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xE700;">
-                <!--<Image Source="Assets/Icons/homeIcon.png"/>-->
+            <Button x:Name="HomeButton" Height="80" Width="80" Click="HomeButton_Click" FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" ToolTipService.ToolTip="PlayList Menu">
             </Button>
-            <Button x:Name="BackButton" Height="80" Width="80" Click="BackButton_Click" RelativePanel.RightOf="FavoritesButton">
+            <Button x:Name="BackButton" Height="80" Width="80" Click="BackButton_Click" RelativePanel.RightOf="FavoritesButton" ToolTipService.ToolTip="Back to All Songs">
                 <Image Source="Assets/Icons/backIcon.png"/>
             </Button>
-            <Button x:Name="FavoritesButton" Height="80" Width="80" Click="FavoritesButton_Click"  RelativePanel.RightOf="HomeButton" FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xE113;">
+            <Button x:Name="FavoritesButton" Height="80" Width="80" Click="FavoritesButton_Click"  RelativePanel.RightOf="HomeButton" FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xEB52;" ToolTipService.ToolTip="Recommended Songs">
             </Button>
         </RelativePanel>
         <SplitView Grid.Row="1" Name="ContentSplitView"
@@ -38,7 +37,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:PlayListMenuItem">
                             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                                <Image Source="{x:Bind PlayListMenuItemIconFile}" Height="50" Width="50" Margin="-10,0,0,0"/>
+                                <Image Source="{x:Bind PlayListMenuItemIconFile}" Height="50" Width="50" Margin="-10,0,0,0" ToolTipService.ToolTip="{x:Bind Category}"/>
                                 <TextBlock Text="{x:Bind Category}" FontSize="20" Margin="10,10,0,0" />
                             </StackPanel>
                         </DataTemplate>
@@ -62,17 +61,14 @@
                                     <Image Height="200" Width="200" Source="{x:Bind ImageFile}"></Image>
                                     <TextBlock Text="{x:Bind TrackName}" FontSize="20"/>
                                     <Button x:Name="RecommendedButton" AllowFocusOnInteraction="True"
-                                            FontFamily="Segoe MDL2 Assets" Content="&#xE113;"
+                                            FontFamily="Segoe MDL2 Assets" Content="&#xEB52;"
                                             Height="35" Width="35" Click="RecommendedButton_Click"
-                                            Background="Transparent"
-                                            >
-                                        <!--<Image Source="Assets/Icons/favoriteIcon.png"></Image>-->
+                                            Background="Transparent">                                        
                                     </Button>
-                                </StackPanel>                                
+                                </StackPanel>
                             </DataTemplate>
                         </GridView.ItemTemplate>
                     </GridView>
-                    <!--<MediaElement Name="TrackMedia" AutoPlay="True"></MediaElement>-->
                     <MediaPlayerElement x:Name="TrackPlayerElement"                    
                                         Width="400"
                                         AutoPlay="True"
@@ -93,41 +89,4 @@
 
     </Grid>
 </Page>
-<!--<Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Name="MusicLibraryTitle" TextAlignment="Center" 
-                   Text="Music Library" FontSize="24" />
-        <ComboBox Width="215" Margin="183,43,0,0" Name="ArtistComboBox" Grid.Row="1" 
-                  SelectionChanged="ArtistComboBox_SelectionChanged"
-                  HorizontalContentAlignment="Center">
-            <ComboBoxItem Content="Artist1"></ComboBoxItem>
-            <ComboBoxItem Content="Artist2"></ComboBoxItem>
-            <ComboBoxItem Content="Artist3"></ComboBoxItem>
-            <ComboBoxItem Content="Artist4"></ComboBoxItem>
-        </ComboBox>
-        <TextBox HorizontalAlignment="Left" Margin="99,43,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Artist" VerticalAlignment="Top"/>
-        <ComboBox Width="215" Margin="183,90,0,0" x:Name="PlaylistComboBox" Grid.Row="1" 
-            SelectionChanged="PlaylistComboBox_SelectionChanged"
-            HorizontalContentAlignment="Center">
-            <ComboBoxItem Content="Playlist1"/>
-            <ComboBoxItem Content="Playlist2"/>
-            <ComboBoxItem Content="Playlist3"/>
-            <ComboBoxItem Content="Playlist4"/>
-        </ComboBox>
-        <TextBox HorizontalAlignment="Left" Margin="99,90,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Playlist" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
-
-        <TextBox HorizontalAlignment="Left" Margin="99,142,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Recommended" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
-        <RadioButton Name="RecommendedTrue" Content="Yes" Margin="231,142,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <RadioButton Name="RecommendedFalse" Content="No" Margin="346,142,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-
-        <TextBox HorizontalAlignment="Left" Height="43" Margin="99,188,0,0" TextWrapping="Wrap"   
-                 Text="TextBox" VerticalAlignment="Top" Width="436" Name="FileNameTextBox" Grid.Row="1"/>
-        <Button x:Name="BrowseButton" Content="Browse a file"   
-                Margin="569,191,0,0" VerticalAlignment="Top" Width="121" Click="BrowseButton_Click"   
-                RenderTransformOrigin="1.047,0.821" Height="40" Grid.Row="1"/>
-        <Button Name ="InsertFileButton" Content="Insert" Margin="101,245,0,0" Grid.Row="1" VerticalAlignment="Top"
-                Click="InsertFileButton_Click"/>
-        <Button Content="Music Player" Margin="173,245,0,0" Grid.Row="1" VerticalAlignment="Top"/>-->
 

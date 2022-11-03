@@ -6,11 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MusicLibrary_Team1.Model
-{
-    internal static class PlayListManager
-    {
-
-       
+{    internal static class PlayListManager
+    {     
         public static List<PlayListMenuItem> getPlayListIcons()
         {
             var PlayListMenuItem = new List<PlayListMenuItem>();

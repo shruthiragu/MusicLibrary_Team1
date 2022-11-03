@@ -33,10 +33,15 @@ namespace MusicLibrary_Team1.Model
             searchTrack.ForEach(track => tracks.Add(track));
         }
 
-        public static void GetAllRecommendedTracks(ObservableCollection<Track> tracks,List<Track> recommendedTracks)
-        {
+        public static void GetAllRecommendedTracks(ObservableCollection<Track> tracks,List<Track> recommendedTracks, List<string> recommendedTrackNames)
+        {            
+            var allTracks = getTracks();
             tracks.Clear();
-            recommendedTracks.ForEach(track => tracks.Add(track));                
+            foreach (var trackName in recommendedTrackNames)
+            {
+                var recommendedTrackName = allTracks.Where(track => track.TrackName == trackName).ToList();
+                recommendedTrackName.ForEach(track => tracks.Add(track));
+            }           
         }
 
         private static List<Track> getTracks()
