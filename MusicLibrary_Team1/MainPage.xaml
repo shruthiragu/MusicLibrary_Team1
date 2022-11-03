@@ -19,8 +19,7 @@
         <RelativePanel Grid.Row="0">
             <Button x:Name="HomeButton" Height="80" Width="80" Click="HomeButton_Click" FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" ToolTipService.ToolTip="PlayList Menu">
             </Button>
-            <Button x:Name="BackButton" Height="80" Width="80" Click="BackButton_Click" RelativePanel.RightOf="FavoritesButton" ToolTipService.ToolTip="Back to All Songs">
-                <Image Source="Assets/Icons/backIcon.png"/>
+            <Button x:Name="BackButton" Height="80" Width="80" Click="BackButton_Click" RelativePanel.RightOf="FavoritesButton"  FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xE72B;" ToolTipService.ToolTip="Back to All Songs">                
             </Button>
             <Button x:Name="FavoritesButton" Height="80" Width="80" Click="FavoritesButton_Click"  RelativePanel.RightOf="HomeButton" FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xEB52;" ToolTipService.ToolTip="Recommended Songs">
             </Button>

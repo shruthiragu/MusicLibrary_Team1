@@ -16,6 +16,8 @@ using Windows.Media.Core;
 using Windows.Devices.Bluetooth;
 using Windows.UI.Xaml.Media;
 using System.Linq;
+using Windows.UI.ViewManagement;
+using Windows.Foundation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -38,6 +40,9 @@ namespace MusicLibrary_Team1
         public MainPage()
         {
             this.InitializeComponent();
+            ApplicationView.PreferredLaunchViewSize = new Size(1000, 800);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
             this.tracks = new ObservableCollection<Track>();
             this.searchAllSongsList = TrackManager.GetAllTracks(tracks);
             this.allTrackNames = TrackManager.GetAllTrackNames();
@@ -55,6 +60,11 @@ namespace MusicLibrary_Team1
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            GoToHomePage();
+        }
+
+        private void GoToHomePage()
         {
             BackButton.Visibility = Visibility.Collapsed;
             TrackManager.GetAllTracks(tracks);
@@ -102,13 +112,17 @@ namespace MusicLibrary_Team1
 
         private void SearchAllSongsAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
+            if (String.IsNullOrEmpty(sender.Text))
+            {
+                GoToHomePage();
+            }
             if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
             {
                 List<string> trackSuggestion = allTrackNames.Where(x => x.Contains(sender.Text)).ToList();
                 sender.ItemsSource = trackSuggestion;
             }
             
-        }        
+        }
 
         private void SearchAllSongsAutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
         {
