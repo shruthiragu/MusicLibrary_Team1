@@ -29,8 +29,9 @@
                    CompactPaneLength="50"
                    OpenPaneLength="200">
             <SplitView.Pane>
-                <ListView Name="PlayListMenuItemListView" 
-                          IsItemClickEnabled="True" 
+                <ListView
+                    Name="PlayListMenuItemListView" 
+                          IsItemClickEnabled="True"
                           ItemsSource="{x:Bind playListItems}" 
                           ItemClick="PlayListMenuItemListView_ItemClick">
                     <ListView.ItemTemplate>
@@ -47,23 +48,23 @@
 
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid>
+                <Grid Loaded="Grid_Loaded">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Name="PlayListTextBlock"  Foreground="Black" FontSize="40" FontFamily="Arial" FontWeight="Bold" Text="All Songs" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Grid.Row="0" Name="PlayListTextBlock"  Foreground="Red" FontSize="40" FontFamily="Arial" FontWeight="Bold" Text="All Songs4" HorizontalAlignment="Left"></TextBlock>
                     <GridView x:Name="TracksGridView" Grid.Row="1" ItemsSource="{x:Bind tracks}" IsItemClickEnabled="True" ItemClick="TracksGridView_ItemClick">
                         <GridView.ItemTemplate>                         
                             <DataTemplate x:DataType="data:Track">
                                 <StackPanel>
-                                    <Image Height="200" Width="200" Source="{x:Bind ImageFile}"></Image>
+                                    <!--<Image Height="200" Width="200" Source="{x:Bind albumCover}"></Image>-->
                                     <TextBlock Text="{x:Bind TrackName}" FontSize="20"/>
-                                    <Button x:Name="RecommendedButton" AllowFocusOnInteraction="True"
+                                    <!--<Button x:Name="RecommendedButton" AllowFocusOnInteraction="True"
                                             FontFamily="Segoe MDL2 Assets" Content="&#xEB52;"
                                             Height="35" Width="35" Click="RecommendedButton_Click"
-                                            Background="Transparent">                                        
-                                    </Button>
+                                            Background="Transparent">                                  
+                                    </Button>-->
                                 </StackPanel>
                             </DataTemplate>
                         </GridView.ItemTemplate>
@@ -72,15 +73,14 @@
                                         Width="400"
                                         AutoPlay="True"
                                         AreTransportControlsEnabled="True"/>
-                    <AutoSuggestBox Name="SearchAllSongsAutoSuggestBox" QueryIcon="Find" Width=" 200" HorizontalAlignment="Right" Margin="-10,10,10,0"
+                    <!--<AutoSuggestBox Name="SearchAllSongsAutoSuggestBox" QueryIcon="Find" Width=" 200" HorizontalAlignment="Right" Margin="-10,10,10,0"
                                     PlaceholderText="Search All Songs" 
                                     TextChanged="SearchAllSongsAutoSuggestBox_TextChanged"
                                     QuerySubmitted="SearchAllSongsAutoSuggestBox_QuerySubmitted"
-                                    SuggestionChosen="SearchAllSongsAutoSuggestBox_SuggestionChosen"/>
+                                    SuggestionChosen="SearchAllSongsAutoSuggestBox_SuggestionChosen"/>-->
                 </Grid>
             </SplitView.Content>
-        </SplitView>
-                     
+        </SplitView>     
 
 
 

@@ -121,6 +121,8 @@
     </Compile>
     <Compile Include="Model\PlayListMenuItem.cs" />
     <Compile Include="Model\PlayListManager.cs" />
+    <Compile Include="Model\Song.cs" />
+    <Compile Include="Model\SongManager.cs" />
     <Compile Include="Model\Track.cs" />
     <Compile Include="Model\TrackManager.cs" />
     <Compile Include="MusicExplorer.xaml.cs">
