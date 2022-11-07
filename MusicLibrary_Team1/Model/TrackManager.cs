@@ -48,13 +48,13 @@ namespace MusicLibrary_Team1.Model
         {
             List<Track> tracks = new List<Track>
             {
-                new Track("SomeoneLikeYou", PlayListCategory.Chill),
-                new Track("NoTearsLeftToCry", PlayListCategory.Chill),
-                new Track("SaySo", PlayListCategory.Classics),
-                new Track("ThinkingOutLoud", PlayListCategory.Classics),
+                new Track("Someone Like You", PlayListCategory.Chill),
+                new Track("No Tears Left To Cry", PlayListCategory.Chill),
+                new Track("Say So", PlayListCategory.Classics),
+                new Track("Thinking Out Loud", PlayListCategory.Classics),
                 new Track("Baby", PlayListCategory.Dance),
-                new Track("PartyRockAnthem", PlayListCategory.Dance),
-                new Track("UptownFunk", PlayListCategory.Upbeat),
+                new Track("Party Rock Anthem", PlayListCategory.Dance),
+                new Track("Uptown Funk", PlayListCategory.Upbeat),
                 new Track("Umbrella", PlayListCategory.Upbeat)
             };
             return tracks;

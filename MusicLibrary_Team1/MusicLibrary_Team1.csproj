@@ -137,14 +137,14 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Audio\Chill\NoTearsLeftToCry.mp3" />
-    <Content Include="Assets\Audio\Chill\SomeoneLikeYou.mp3" />
-    <Content Include="Assets\Audio\Classics\SaySo.mp3" />
-    <Content Include="Assets\Audio\Classics\ThinkingOutLoud.mp3" />
+    <Content Include="Assets\Audio\Chill\No Tears Left To Cry.mp3" />
+    <Content Include="Assets\Audio\Chill\Someone Like You.mp3" />
+    <Content Include="Assets\Audio\Classics\Say So.mp3" />
+    <Content Include="Assets\Audio\Classics\Thinking Out Loud.mp3" />
     <Content Include="Assets\Audio\Dance\Baby.mp3" />
-    <Content Include="Assets\Audio\Dance\PartyRockAnthem.mp3" />
+    <Content Include="Assets\Audio\Dance\Party Rock Anthem.mp3" />
     <Content Include="Assets\Audio\Upbeat\Umbrella.mp3" />
-    <Content Include="Assets\Audio\Upbeat\UptownFunk.mp3" />
+    <Content Include="Assets\Audio\Upbeat\Uptown Funk.mp3" />
     <Content Include="Assets\Icons\backIcon.png" />
     <Content Include="Assets\Icons\Chill\chillIcon.png" />
     <Content Include="Assets\Icons\Classics\classicsIcon.png" />
@@ -152,17 +152,17 @@
     <Content Include="Assets\Icons\homeIcon.png" />
     <Content Include="Assets\Icons\Upbeat\upbeatIcon.png" />
     <Content Include="Assets\Images\chill art.png" />
-    <Content Include="Assets\Images\Chill\NoTearsLeftToCry.png" />
-    <Content Include="Assets\Images\Chill\SomeoneLikeYou.png" />
+    <Content Include="Assets\Images\Chill\No Tears Left To Cry.png" />
+    <Content Include="Assets\Images\Chill\Someone Like You.png" />
     <Content Include="Assets\Images\classics art.png" />
-    <Content Include="Assets\Images\Classics\SaySo.png" />
-    <Content Include="Assets\Images\Classics\ThinkingOutLoud.png" />
+    <Content Include="Assets\Images\Classics\Say So.png" />
+    <Content Include="Assets\Images\Classics\Thinking Out Loud.png" />
     <Content Include="Assets\Images\dance art.png" />
     <Content Include="Assets\Images\Dance\Baby.png" />
-    <Content Include="Assets\Images\Dance\PartyRockAnthem.png" />
+    <Content Include="Assets\Images\Dance\Party Rock Anthem.png" />
     <Content Include="Assets\Images\upbeat art.png" />
     <Content Include="Assets\Images\Upbeat\Umbrella.png" />
-    <Content Include="Assets\Images\Upbeat\UptownFunk.png" />
+    <Content Include="Assets\Images\Upbeat\Uptown Funk.png" />
     <Content Include="Assets\musicAppIcon3.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-125.png" />
