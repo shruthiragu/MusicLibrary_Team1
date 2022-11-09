@@ -137,12 +137,26 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Audio\Chill\Bad Habit.mp3" />
     <Content Include="Assets\Audio\Chill\No Tears Left To Cry.mp3" />
+    <Content Include="Assets\Audio\Chill\Skate.mp3" />
     <Content Include="Assets\Audio\Chill\Someone Like You.mp3" />
+    <Content Include="Assets\Audio\Chill\Love Story.mp3" />
+    <Content Include="Assets\Audio\Chill\You Belong With Me.mp3" />
+    <Content Include="Assets\Audio\Classics\Happier Than Ever.mp3" />
+    <Content Include="Assets\Audio\Classics\I Knew You Were Trouble.mp3" />
+    <Content Include="Assets\Audio\Classics\jealousy jealousy.mp3" />
     <Content Include="Assets\Audio\Classics\Say So.mp3" />
     <Content Include="Assets\Audio\Classics\Thinking Out Loud.mp3" />
+    <Content Include="Assets\Audio\Dance\7 rings.mp3" />
     <Content Include="Assets\Audio\Dance\Baby.mp3" />
+    <Content Include="Assets\Audio\Dance\bad guy.mp3" />
     <Content Include="Assets\Audio\Dance\Party Rock Anthem.mp3" />
+    <Content Include="Assets\Audio\Dance\thank u next.mp3" />
+    <Content Include="Assets\Audio\Upbeat\Photograph.mp3" />
+    <Content Include="Assets\Audio\Upbeat\Shape of You.mp3" />
+    <Content Include="Assets\Audio\Upbeat\Stay.mp3" />
+    <Content Include="Assets\Audio\Upbeat\Traitor.mp3" />
     <Content Include="Assets\Audio\Upbeat\Umbrella.mp3" />
     <Content Include="Assets\Audio\Upbeat\Uptown Funk.mp3" />
     <Content Include="Assets\Icons\backIcon.png" />
@@ -152,15 +166,29 @@
     <Content Include="Assets\Icons\homeIcon.png" />
     <Content Include="Assets\Icons\Upbeat\upbeatIcon.png" />
     <Content Include="Assets\Images\chill art.png" />
+    <Content Include="Assets\Images\Chill\Bad Habit.png" />
+    <Content Include="Assets\Images\Chill\Love Story.png" />
     <Content Include="Assets\Images\Chill\No Tears Left To Cry.png" />
+    <Content Include="Assets\Images\Chill\Skate.png" />
     <Content Include="Assets\Images\Chill\Someone Like You.png" />
+    <Content Include="Assets\Images\Chill\You Belong With Me.png" />
     <Content Include="Assets\Images\classics art.png" />
+    <Content Include="Assets\Images\Classics\Happier Than Ever.png" />
+    <Content Include="Assets\Images\Classics\I Knew You Were Trouble.png" />
+    <Content Include="Assets\Images\Classics\jealousy jealousy.png" />
     <Content Include="Assets\Images\Classics\Say So.png" />
     <Content Include="Assets\Images\Classics\Thinking Out Loud.png" />
     <Content Include="Assets\Images\dance art.png" />
+    <Content Include="Assets\Images\Dance\7 rings.png" />
     <Content Include="Assets\Images\Dance\Baby.png" />
+    <Content Include="Assets\Images\Dance\Bad Guy.png" />
     <Content Include="Assets\Images\Dance\Party Rock Anthem.png" />
+    <Content Include="Assets\Images\Dance\thank u next.png" />
     <Content Include="Assets\Images\upbeat art.png" />
+    <Content Include="Assets\Images\Upbeat\Photograph.png" />
+    <Content Include="Assets\Images\Upbeat\Shape of You.png" />
+    <Content Include="Assets\Images\Upbeat\Stay.png" />
+    <Content Include="Assets\Images\Upbeat\Traitor.png" />
     <Content Include="Assets\Images\Upbeat\Umbrella.png" />
     <Content Include="Assets\Images\Upbeat\Uptown Funk.png" />
     <Content Include="Assets\musicAppIcon3.png" />
