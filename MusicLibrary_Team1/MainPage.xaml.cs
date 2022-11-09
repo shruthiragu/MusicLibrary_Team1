@@ -19,6 +19,7 @@ using System.Linq;
 using Windows.UI.ViewManagement;
 using Windows.Foundation;
 using Windows.Storage.Search;
+using Windows.Storage.FileProperties;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -38,7 +39,7 @@ namespace MusicLibrary_Team1
         //public List<string> allTrackNames;
         //public List<string> recommendedTrackNames;
         internal ObservableCollection<Song> Songs;
-        internal ObservableCollection<StorageFile> songFiles;
+        //internal ObservableCollection<StorageFile> songFiles;
 
 
         public MainPage()
@@ -46,15 +47,24 @@ namespace MusicLibrary_Team1
             this.InitializeComponent();
             ApplicationView.PreferredLaunchViewSize = new Size(1000, 800);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+            Songs = new ObservableCollection<Song>();
+
+            /*StorageFolder folder = KnownFolders.MusicLibrary;
+            this.songFiles = new ObservableCollection<StorageFile>();
+            RetrieveAllFilesFromMusicFolder(folder, songFiles).Wait(10000);
+            this.Songs = new ObservableCollection<Song>();
+            SongManager.GetAllSongs(Songs, songFiles).Wait(5000);
+            */
 
             /*this.tracks = new ObservableCollection<Track>();
             this.searchAllSongsList = TrackManager.GetAllTracks(tracks);
             //this.allTrackNames = TrackManager.GetAllTrackNames();
             this.playListItems = new List<PlayListMenuItem>();
             playListItems = PlayListManager.getPlayListIcons();
-            //BackButton.Visibility = Visibility.Collapsed;
+            BackButton.Visibility = Visibility.Collapsed;
             //this.recommendedTracks = new List<Track>();
             //this.recommendedTrackNames = new List<string>();*/
+            BackButton.Visibility = Visibility.Collapsed;
         }
 
         private async Task RetrieveAllFilesFromMusicFolder(StorageFolder folder, ObservableCollection<StorageFile> songFiles)
@@ -155,21 +165,18 @@ namespace MusicLibrary_Team1
             }
         }*/
 
-        public async void Grid_Loaded(object sender, RoutedEventArgs e)
+        private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             StorageFolder folder = KnownFolders.MusicLibrary;
-            this.songFiles = new ObservableCollection<StorageFile>();
-            await RetrieveAllFilesFromMusicFolder(folder, songFiles);
-
-
-            this.Songs = new ObservableCollection<Song>();
-            await SongManager.GetAllSongs(Songs, songFiles);
+            var songFiles = new ObservableCollection<StorageFile>();
+            await RetrieveAllFilesFromMusicFolder(folder, songFiles);            
+            await GetAllSongs(songFiles);
 
 
 
 
-            this.tracks = new ObservableCollection<Track>();
-            this.searchAllSongsList = TrackManager.GetAllTracks(tracks);
+            //this.tracks = new ObservableCollection<Track>();
+            //this.searchAllSongsList = TrackManager.GetAllTracks(tracks);
             //this.allTrackNames = TrackManager.GetAllTrackNames();
             this.playListItems = new List<PlayListMenuItem>();
             playListItems = PlayListManager.getPlayListIcons();
@@ -178,5 +185,52 @@ namespace MusicLibrary_Team1
             //this.recommendedTrackNames = new List<string>();
         }
 
+        private async Task GetAllSongs(ObservableCollection<StorageFile> songFiles)
+        {
+            foreach (var song in songFiles)
+            {
+                MusicProperties musicProperties = await song.Properties.GetMusicPropertiesAsync();
+                var thumbnail = await song.GetThumbnailAsync(ThumbnailMode.MusicView);
+
+                Songs.Add(new Song(musicProperties.Title, musicProperties.Artist, musicProperties.Genre[0], musicProperties.Album, thumbnail, song));
+            }
+        }
+
+        private void Grid_Loading(FrameworkElement sender, object args)
+        {
+            /*StorageFolder folder = KnownFolders.MusicLibrary;
+            this.songFiles = new ObservableCollection<StorageFile>();
+            await RetrieveAllFilesFromMusicFolder(folder, songFiles);
+
+
+            this.Songs = new ObservableCollection<Song>();
+            await SongManager.GetAllSongs(Songs, songFiles);
+            this.playListItems = new List<PlayListMenuItem>();
+            playListItems = PlayListManager.getPlayListIcons();*/
+        }
+
+        private void LoadMusic_Click(object sender, RoutedEventArgs e)
+        {
+            /*this.tracks = new ObservableCollection<Track>();
+            this.searchAllSongsList = TrackManager.GetAllTracks(tracks);
+            //this.allTrackNames = TrackManager.GetAllTrackNames();
+            this.playListItems = new List<PlayListMenuItem>();
+            playListItems = PlayListManager.getPlayListIcons();
+            BackButton.Visibility = Visibility.Collapsed;
+            //this.recommendedTracks = new List<Track>();
+            //this.recommendedTrackNames = new List<string>();
+            BackButton.Visibility = Visibility.Collapsed;
+            
+            //TrackManager.GetAllTrackNames
+           /* StorageFolder folder = KnownFolders.MusicLibrary;
+            this.songFiles = new ObservableCollection<StorageFile>();
+            await RetrieveAllFilesFromMusicFolder(folder, songFiles);
+
+
+            this.Songs = new ObservableCollection<Song>();
+            await SongManager.GetAllSongs(Songs, songFiles);
+            this.playListItems = new List<PlayListMenuItem>();
+            playListItems = PlayListManager.getPlayListIcons();*/
+        }
     }
 }
