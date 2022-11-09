@@ -167,6 +167,7 @@
     <Content Include="Assets\Icons\Upbeat\upbeatIcon.png" />
     <Content Include="Assets\Images\chill art.png" />
     <Content Include="Assets\Images\Chill\Bad Habit.png" />
+    <Content Include="Assets\Images\Classics\jealousy jealousy.png" />
     <Content Include="Assets\Images\Chill\Love Story.png" />
     <Content Include="Assets\Images\Chill\No Tears Left To Cry.png" />
     <Content Include="Assets\Images\Chill\Skate.png" />
@@ -175,7 +176,6 @@
     <Content Include="Assets\Images\classics art.png" />
     <Content Include="Assets\Images\Classics\Happier Than Ever.png" />
     <Content Include="Assets\Images\Classics\I Knew You Were Trouble.png" />
-    <Content Include="Assets\Images\Classics\jealousy jealousy.png" />
     <Content Include="Assets\Images\Classics\Say So.png" />
     <Content Include="Assets\Images\Classics\Thinking Out Loud.png" />
     <Content Include="Assets\Images\dance art.png" />
