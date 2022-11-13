@@ -106,7 +106,7 @@ namespace MusicLibrary_Team1
         private void FavoritesButton_Click(object sender, RoutedEventArgs e)
         {
             TrackManager.GetAllRecommendedTracks(tracks, recommendedTracks, recommendedTrackNames);
-            PlayListTextBlock.Text = "Recommended";
+            PlayListTextBlock.Text = "Favorites";
             BackButton.Visibility = Visibility.Visible;
         }
 

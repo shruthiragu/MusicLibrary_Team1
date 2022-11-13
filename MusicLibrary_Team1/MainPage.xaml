@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:MusicLibrary_Team1.Model"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignHeight="1736" d:DesignWidth="2364">
  
 
     <Grid>
@@ -21,7 +21,7 @@
             </Button>
             <Button x:Name="BackButton" Height="80" Width="80" Click="BackButton_Click" RelativePanel.RightOf="FavoritesButton"  FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xE72B;" ToolTipService.ToolTip="Back to All Songs">                
             </Button>
-            <Button x:Name="FavoritesButton" Height="80" Width="80" Click="FavoritesButton_Click"  RelativePanel.RightOf="HomeButton" FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xEB52;" ToolTipService.ToolTip="Recommended Songs">
+            <Button x:Name="FavoritesButton" Height="80" Width="80" Click="FavoritesButton_Click"  RelativePanel.RightOf="HomeButton" FontSize="45" FontFamily="Segoe MDL2 Assets" Content="&#xEB52;" ToolTipService.ToolTip="Favorite Songs">
             </Button>
         </RelativePanel>
         <SplitView Grid.Row="1" Name="ContentSplitView"
